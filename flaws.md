@@ -22,7 +22,7 @@ It can be fixed by setting the parameters correctly:
 # A3 Cross-Site Scripting
 
 #### Steps to Reproduce
-1. Create an account with name "<marquee>Bob</marquee>" and some address 
+1. Create an account with name ```<marquee>Bob</marquee>``` and some address 
 2. Bob should be scrolling sideways on the next page if the browser supports it
 
 #### How to fix
