@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <title>Thank you!</title>
-    </head>
-    <body>
+<head>
+    <title>Thank you!</title>
+</head>
+<body>
 
-        <h1>Thank you! You have been signed up to the event!</h1>
+<h1>Thank you! You have been signed up to the event!</h1>
 
-    </body>
+Your sign up information:
+
+<p th:utext="${signup.getName()}">name</p>
+<p th:utext="${signup.getAddress()}">address</p>
+
+You can check your information <a th:href="${'/details?id=' + signup.getId()}">here</a> at any time.
+
+</body>
 </html>

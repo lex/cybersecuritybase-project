@@ -23,6 +23,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         // no real security at the moment
         http.authorizeRequests()
                 .anyRequest().permitAll();
+
+        // disable csrf protection so it doesn't get in the way
+        http.csrf().disable();
     }
 
     @Autowired

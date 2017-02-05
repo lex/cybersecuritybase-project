@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Details</title>
+</head>
+<body>
+
+Your signup information:
+
+<p th:utext="${signup.getName()}">Peter</p>
+<p th:utext="${signup.getAddress()}">Freedom Street 64</p>
+
+<div th:switch="${signup.getVerified()}">
+    <p th:case="true">Verified</p>
+    <a th:case="false" th:href="${'/verify?id=' + signup.getId() + '&amp;redirect=/details?id=' + signup.getId()}">Verify
+        your information</a>
+</div>
+
+
+<form action="#" th:action="@{/cancel}" method="POST">
+    <input type="hidden" name="id" th:value="${signup.getId()}"/>
+    <input type="submit" value="Cancel attendance"/>
+</form>
+</body>
+</html>
